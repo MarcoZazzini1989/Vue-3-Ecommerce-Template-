@@ -19,5 +19,12 @@ onMounted(() => {
   <div>
     <h1>Catalog</h1>
     <prova />
+<div class="products" v-for="product in productsStore.products" :key="product.id">
+    <img :src="product.thumbnail"      > </img>
+    <h2> Brand : {{ product.brand  }}  </h2>
+
+</div>
+
+
   </div>
 </template>
