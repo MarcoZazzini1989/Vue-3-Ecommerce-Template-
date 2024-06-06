@@ -1,9 +1,11 @@
-<script setup lang="ts">
-import HelloWorld from "./components/HelloWorld.vue";
+<script setup>
+import Home from "./views/Home.vue"
 </script>
 
 <template>
-  <div>
-    <HelloWorld />
-  </div>
+  <h1>ciao</h1>
+  <p>gjgjjg</p>
+  <main>
+    <RouterView />
+  </main>
 </template>
