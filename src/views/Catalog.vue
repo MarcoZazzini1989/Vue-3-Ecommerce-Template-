@@ -1,6 +1,5 @@
 <script setup>
 import { onMounted , ref , computed } from "vue"
-import prova from "../stores/prova.vue"
 import { productsStore } from "../stores/products.js"
 import {useRouter, useRoute} from "vue-router";
 
@@ -17,7 +16,8 @@ const route = useRoute()
   
   const GoToProductpage = (id) =>{
     router.push({ name: 'Productview' , params: {id} })}
-  
+
+    
 
 
 
