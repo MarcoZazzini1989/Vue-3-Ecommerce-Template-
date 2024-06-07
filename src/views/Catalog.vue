@@ -2,14 +2,21 @@
 import { onMounted , ref } from "vue"
 import prova from "../stores/prova.vue"
 import { productsStore } from "../stores/products.js"
+import {useRouter} from "vue-router";
 
 const store = productsStore()
+const router = useRouter()
 
 
   onMounted( async  () => {
              await store.fetchProductsFromDB()
-             console.log(`the component is now mounted.`)
-            })
+             console.log(`the component is now mounted.`)})
+  
+  
+  const GoToProductpage = () =>{
+    router.push({ name: 'Productview' })
+
+       }           
 
 
 
@@ -18,7 +25,8 @@ const store = productsStore()
 <template>
 <div class="product-list">
 <!---<h1>Catalog</h1>-->   
-<div class="product" v-for="product in store.products" :key="product.id">
+<div class="product" v-for="product in store.products" :key="product.id"
+  @click="GoToProductpage"    >
     <img :src="product.thumbnail"      > </img>
     <h2> Brand : {{ product.brand  }}  </h2>
     <p>Description : {{product.description}}</p>
